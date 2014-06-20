@@ -12,7 +12,7 @@ public class Project {
 	 * @param name le nom du projet
 	 */
 	public Project (String name){
-		this.name=name;
+		this.name=name;		
 	}
 	
 	/**
