@@ -1,33 +1,22 @@
 package sds;
 
-public class Project {
+public class Project extends Conteneur {
 
-	/**
-	 * Nom du projet
-	 */
-	private String name;
-
-	/**
-	 * Constructeur de projet
-	 * @param name le nom du projet
-	 */
-	public Project (String name){
-		this.name=name;		
-	}
-	
-	/**
-	 * getter du nom
-	 * @return name
-	 */
-	public String getName() {
-		return name;
+	public Project(String name) {
+		super(name);
 	}
 
 	/**
-	 * Setter du nom
-	 * @param name
+	 * Ajoute un element au projet
+	 * cet element ne peut pas être une tâche
 	 */
-	public void setName(String name) {
-		this.name = name;
+	public void addElement(Element e){
+		if(!(e instanceof Task)){
+			elts.add(e);
+		}
+	}
+
+	public Element getElement(int i) {
+		return elts.size()<=i?null:elts.get(i);
 	}
 }
